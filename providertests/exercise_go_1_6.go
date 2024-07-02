@@ -19,7 +19,7 @@ package providertests
 import (
 	"testing"
 
-	saml2 "github.com/russellhaering/gosaml2"
+	saml2 "github.com/nsone/gosaml2"
 	"github.com/stretchr/testify/require"
 )
 
