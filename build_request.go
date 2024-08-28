@@ -278,18 +278,22 @@ func (sp *SAMLServiceProvider) BuildAuthBodyPostFromDocument(relayState string, 
 	return sp.buildAuthBodyPostFromDocument(relayState, doc)
 }
 
-// BuildAuthURL builds redirect URL to be sent to principal
+// BuildAuthURL builds the HTTP-POST URL to be sent to principal
 func (sp *SAMLServiceProvider) BuildAuthURL(relayState string) (string, error) {
 	doc, err := sp.BuildAuthRequestDocument()
 	if err != nil {
 		return "", err
 	}
+	return sp.BuildAuthURLFromDocument(relayState, doc)
+}
 
-	if sp.IdentityProviderSSOBinding == BindingHttpRedirect {
-		return sp.BuildAuthURLRedirect(relayState, doc)
-	} else {
-		return sp.BuildAuthURLFromDocument(relayState, doc)
+// BuildRedirectAuthURL builds the HTTP-Redirect URL to be sent to principal
+func (sp *SAMLServiceProvider) BuildRedirectAuthURL(relayState string) (string, error) {
+	doc, err := sp.BuildAuthRequestDocument()
+	if err != nil {
+		return "", err
 	}
+	return sp.BuildAuthURLRedirect(relayState, doc)
 }
 
 // AuthRedirect takes a ResponseWriter and Request from an http interaction and
