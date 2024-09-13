@@ -289,7 +289,7 @@ func (sp *SAMLServiceProvider) BuildAuthURL(relayState string) (string, error) {
 
 // BuildRedirectAuthURL builds the HTTP-Redirect URL to be sent to principal
 func (sp *SAMLServiceProvider) BuildRedirectAuthURL(relayState string) (string, error) {
-	doc, err := sp.BuildAuthRequestDocument()
+	doc, err := sp.BuildAuthRequestDocumentNoSig()
 	if err != nil {
 		return "", err
 	}
