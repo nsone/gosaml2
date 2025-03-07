@@ -99,10 +99,5 @@ func (ea *EncryptedAssertion) Decrypt(cert *tls.Certificate) (*Assertion, error)
 	// Store the encryption method in the assertion
 	assertion.EncryptionMethod = ea.EncryptionMethod.Algorithm
 
-	// Log if TripleDESCBC is used
-	if ea.EncryptionMethod.Algorithm == MethodTripleDESCBC {
-		fmt.Printf("SAML authentication used deprecated TripleDESCBC encryption method\n")
-	}
-
 	return assertion, nil
 }
