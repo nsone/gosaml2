@@ -90,6 +90,7 @@ type Assertion struct {
 	AttributeStatement *AttributeStatement `xml:"AttributeStatement"`
 	AuthnStatement     *AuthnStatement     `xml:"AuthnStatement"`
 	SignatureValidated bool                `xml:"-"` // not read, not dumped
+	EncryptionMethod   string              `xml:"-"` // stores encryption method for monitoring
 }
 
 type Subject struct {
