@@ -382,4 +382,5 @@ type AssertionInfo struct {
 	SessionNotOnOrAfter        *time.Time
 	Assertions                 []types.Assertion
 	ResponseSignatureValidated bool
+	EncryptionMethod           string
 }

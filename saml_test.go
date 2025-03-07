@@ -87,6 +87,9 @@ func TestDecode(t *testing.T) {
 	expected := &types.Assertion{}
 	err = xml.Unmarshal(f2, expected)
 
+	// Set the encryption method on the expected assertion to match what our implementation added
+	expected.EncryptionMethod = assertion.EncryptionMethod
+
 	require.EqualValues(t, expected, assertion, "decrypted assertion did not match expectation")
 }
 

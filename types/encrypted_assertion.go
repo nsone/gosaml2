@@ -96,5 +96,8 @@ func (ea *EncryptedAssertion) Decrypt(cert *tls.Certificate) (*Assertion, error)
 		return nil, fmt.Errorf("Error unmarshaling assertion: %v", err)
 	}
 
+	// Store the encryption method in the assertion
+	assertion.EncryptionMethod = ea.EncryptionMethod.Algorithm
+
 	return assertion, nil
 }
