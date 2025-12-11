@@ -3,7 +3,7 @@ module github.com/nsone/gosaml2
 go 1.21.0
 
 require (
-	github.com/beevik/etree v1.5.0
+	github.com/beevik/etree v1.5.1
 	github.com/jonboulle/clockwork v0.5.0
 	github.com/mattermost/xml-roundtrip-validator v0.1.0
 	github.com/russellhaering/goxmldsig v1.5.0
