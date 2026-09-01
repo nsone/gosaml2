@@ -18,7 +18,7 @@ import (
 	"encoding/xml"
 	"testing"
 
-	"github.com/russellhaering/gosaml2/types"
+	"github.com/nsone/gosaml2/types"
 	"github.com/stretchr/testify/require"
 )
 
